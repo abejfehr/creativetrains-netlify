@@ -1,115 +1,302 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from "react"
+import { Link } from "gatsby"
 
-import logo from '../img/logo.svg'
-import facebook from '../img/social/facebook.svg'
-import instagram from '../img/social/instagram.svg'
-import twitter from '../img/social/twitter.svg'
-import vimeo from '../img/social/vimeo.svg'
+export const Footer = () => (
+  <>
+    <style>
+      {`
+    footer {
+      background-color: #7f8c8d;
+      color: #ecf0f1;
+      min-height: 200px;
+      border-top: 1px solid lightgray;
+      margin-top: 20px;
+      padding-top: 20px;
+    }
 
-const Footer = class extends React.Component {
-  render() {
-    return (
-      <footer className="footer has-background-black has-text-white-ter">
-        <div className="content has-text-centered">
-          <img
-            src={logo}
-            alt="Kaldi"
-            style={{ width: '14em', height: '10em' }}
-          />
-        </div>
-        <div className="content has-text-centered has-background-black has-text-white-ter">
-          <div className="container has-background-black has-text-white-ter">
-            <div className="columns">
-              <div className="column is-4">
-                <section className="menu">
-                  <ul className="menu-list">
-                    <li>
-                      <Link to="/" className="navbar-item">
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/about">
-                        About
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/products">
-                        Products
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact/examples">
-                        Form Examples
-                      </Link>
-                    </li>
-                    <li>
-                      <a
-                        className="navbar-item"
-                        href="/admin/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Admin
-                      </a>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className="column is-4">
-                <section>
-                  <ul className="menu-list">
-                    <li>
-                      <Link className="navbar-item" to="/blog">
-                        Latest Stories
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact">
-                        Contact
-                      </Link>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className="column is-4 social">
-                <a title="facebook" href="https://facebook.com">
-                  <img
-                    src={facebook}
-                    alt="Facebook"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="twitter" href="https://twitter.com">
-                  <img
-                    className="fas fa-lg"
-                    src={twitter}
-                    alt="Twitter"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="instagram" href="https://instagram.com">
-                  <img
-                    src={instagram}
-                    alt="Instagram"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="vimeo" href="https://vimeo.com">
-                  <img
-                    src={vimeo}
-                    alt="Vimeo"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-              </div>
+    footer .section-header {
+      font-weight: bold;
+    }
+
+    footer a {
+      color: #ecf0f1;
+      margin: 3px 0;
+    }
+
+    footer .copyright {
+      font-size: 14px;
+    }
+
+    footer .payment-icons {
+      margin: 10px 0;
+    }
+
+    footer .container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    footer .container .columns {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+    }
+
+    footer .container .columns .column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      margin: 10px 0;
+    }
+
+    @media only screen and (min-width: 500px) {
+      footer .container .columns {
+        flex-direction: row;
+      }
+
+      footer .container .columns .column {
+        margin: 0;
+      }
+    }
+    `}
+    </style>
+    <footer>
+      <div class="container">
+        <div class="columns" style={{ display: "flex", flex: 1 }}>
+          <div class="column">
+            <div class="section-header">Website Links</div>
+            <Link to="/">Home</Link>
+            <Link to="/shipping-info">Shipping Info</Link>
+            <Link to="/contact">Contact</Link>
+          </div>
+          <div class="column">
+            <div class="section-header">Rolling Stock</div>
+            <a href="/rolling-stock#tankers">Tank Cars</a>
+            <a href="/rolling-stock#flat-cars">Flat Cars</a>
+            <a href="/rolling-stock#boxcars">Boxcars</a>
+          </div>
+          {/* <!-- <div class="column">
+        <div class="section-header">Accessories</div>
+        <a href="/accessories#lights">Lights</a>
+        <a href="/accessories#trucks">Trucks</a>
+      </div> --> */}
+          <div class="column">
+            <div style={{ fontWeight: "bold" }}>Creative Train Company</div>
+            <div>Box 856</div>
+            <div>Minnedosa, MB</div>
+            <div>R0G 1E0</div>
+            <div>Canada</div>
+            <div style={{ height: "20px" }}></div>
+            <div>
+              Phone: <a href="tel:+12043320492">+1 (204) 332-0492</a>
+            </div>
+            <div>
+              Email:{" "}
+              <a href="mailto:henry@creativetrains.ca">
+                henry@creativetrains.ca
+              </a>
+            </div>
+            <div>&nbsp;</div>
+            <div>
+              Check us out on{" "}
+              <a href="https://www.facebook.com/creativetraincompany/">
+                Facebook
+              </a>
             </div>
           </div>
         </div>
-      </footer>
-    )
-  }
-}
 
-export default Footer
+        <div class="copyright">
+          <div class="payment-icons">
+            <div style={{ marginBottom: "10px" }}>
+              We accept Visa, MasterCard, and PayPal
+            </div>
+            <svg
+              height="50"
+              viewBox="0 0 160 100"
+              width="80"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g fill="none" fill-rule="evenodd">
+                <path fill="#F6F6F6" d="M0 9h160v80H0z" />
+                <path
+                  d="M148 0H8C4 0 0 4 0 8v12h160v-8c0-8-4-12-12-12zm0 0"
+                  fill="#265697"
+                />
+                <path
+                  d="M0 80v8c0 8 4 12 12 12h136c8 0 12-4 12-12v-8H0zm0 0"
+                  fill="#D97B16"
+                />
+                <path
+                  d="M111.615 29.782c-2.243-.86-5.757-1.782-10.145-1.782-11.184 0-19.062 5.755-19.129 14.003-.063 6.097 5.624 9.498 9.918 11.528 4.405 2.08 5.886 3.406 5.865 5.263-.028 2.844-3.518 4.144-6.771 4.144-4.53 0-6.937-.644-10.654-2.228l-1.459-.674-1.588 9.498c2.643 1.185 7.532 2.211 12.608 2.264 11.897 0 19.621-5.689 19.709-14.496.043-4.827-2.973-8.5-9.503-11.529-3.956-1.963-6.379-3.273-6.353-5.26 0-1.764 2.05-3.65 6.481-3.65 3.702-.058 6.383.766 8.472 1.626l1.014.49 1.535-9.197M140.638 28.778h-8.746c-2.709 0-4.736.755-5.926 3.519l-16.81 38.885h11.885s1.944-5.228 2.383-6.376c1.299 0 12.845.018 14.496.018a820.847 820.847 0 0 1 1.377 6.358h10.502l-9.16-42.404zm-13.956 27.349c.936-2.445 4.509-11.862 4.509-11.862-.067.113.93-2.456 1.5-4.05l.766 3.659s2.167 10.128 2.62 12.252h-9.395zm0 0M59.25 71.169l7.076-42.432h11.319L70.564 71.17H59.25zm0 0M49.757 28.768L38.676 57.703l-1.181-5.88c-2.063-6.778-8.49-14.122-15.676-17.8l10.133 37.109 11.975-.014 17.82-42.35h-11.99"
+                  fill="#265697"
+                />
+                <path
+                  d="M28.396 28.742H10.144l-.144.883c14.2 3.512 23.595 12 27.495 22.198l-3.969-19.499c-.685-2.686-2.672-3.488-5.13-3.582"
+                  fill="#D97B16"
+                />
+              </g>
+            </svg>
+            <svg
+              height="50"
+              viewBox="0 0 160 100"
+              width="80"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g fill="none" fill-rule="evenodd">
+                <path
+                  d="M148 0H8C4 0 0 4 0 8v80c0 8 4 12 12 12h136c8 0 12-4 12-12V12c0-8-4-12-12-12zm0 0"
+                  fill="#265697"
+                />
+                <path
+                  d="M149.545 50.5c.007 23.238-18.625 42.08-41.615 42.085-22.991.006-41.631-18.826-41.637-42.064V50.5c-.006-23.237 18.626-42.08 41.615-42.086 22.99-.006 41.631 18.827 41.637 42.065v.021s0-.008 0 0zm0 0"
+                  fill="#DFAC16"
+                />
+                <path
+                  d="M51.813 8.425c-22.854.147-41.359 18.94-41.359 42.075 0 23.225 18.649 42.075 41.627 42.075 10.784 0 20.614-4.155 28.011-10.963l-.003-.002h.009a42.283 42.283 0 0 0 4.226-4.505h-8.529a41.082 41.082 0 0 1-3.103-4.335H87.4a42.29 42.29 0 0 0 2.423-4.505h-19.56a41.763 41.763 0 0 1-1.74-4.42h23.042A42.384 42.384 0 0 0 93.707 50.5a42.6 42.6 0 0 0-.959-9.01H67.302c.315-1.494.713-2.97 1.187-4.42h23.05a42.346 42.346 0 0 0-1.794-4.505H70.26a40.506 40.506 0 0 1 2.389-4.42h14.697a42.154 42.154 0 0 0-3.23-4.505h-8.195a38.848 38.848 0 0 1 4.176-4.25C72.7 12.58 62.868 8.425 52.08 8.425h-.268s.09 0 0 0zm0 0"
+                  fill="#BF3126"
+                />
+                <path
+                  d="M67.05 61.212l.554-3.808c-.303 0-.748.132-1.142.132-1.543 0-1.713-.83-1.614-1.443l1.246-7.77h2.345l.566-4.211h-2.211l.45-2.62h-4.432c-.098.1-2.616 14.732-2.616 16.514 0 2.637 1.465 3.812 3.531 3.793 1.618-.013 2.878-.466 3.323-.587 0 0-.445.121 0 0zm0 0M68.454 53.952c0 6.331 4.134 7.835 7.656 7.835 3.251 0 4.682-.734 4.682-.734l.78-4.32s-2.473 1.1-4.706 1.1c-4.76 0-3.926-3.586-3.926-3.586h9.007s.582-2.903.582-4.086c0-2.952-1.454-6.548-6.32-6.548-4.456 0-7.755 4.854-7.755 10.34 0 0 0-5.486 0 0zm7.772-6.327c2.501 0 2.04 2.84 2.04 3.07h-4.92c0-.293.464-3.07 2.88-3.07 0 0-2.416 0 0 0zm0 0M104.292 61.21l.793-4.883s-2.175 1.102-3.667 1.102c-3.144 0-4.405-2.427-4.405-5.034 0-5.288 2.705-8.198 5.716-8.198 2.259 0 4.071 1.282 4.071 1.282l.724-4.745s-2.688-1.1-4.992-1.1c-5.117 0-10.094 4.487-10.094 12.913 0 5.587 2.688 9.277 7.977 9.277 1.495 0 3.877-.614 3.877-.614zm0 0M42.673 43.682c-3.039 0-5.369.988-5.369.988l-.643 3.859s1.923-.79 4.83-.79c1.65 0 2.857.188 2.857 1.543 0 .824-.148 1.128-.148 1.128s-1.301-.11-1.904-.11c-3.833 0-7.86 1.653-7.86 6.638 0 3.928 2.642 4.83 4.279 4.83 3.127 0 4.475-2.051 4.547-2.058l-.146 1.712h3.902l1.741-12.337c0-5.234-4.517-5.403-6.086-5.403zm.95 10.046c.084.753-.468 4.286-3.136 4.286-1.377 0-1.735-1.063-1.735-1.692 0-1.226.66-2.698 3.907-2.698.755.001.836.083.964.104 0 0-.128-.021 0 0zm0 0M52.907 61.677c.999 0 6.706.257 6.706-5.696 0-5.565-5.283-4.465-5.283-6.7 0-1.114.86-1.464 2.435-1.464.625 0 3.028.2 3.028.2l.56-3.955s-1.556-.352-4.09-.352c-3.278 0-6.606 1.323-6.606 5.85 0 5.128 5.549 4.614 5.549 6.774 0 1.442-1.55 1.56-2.745 1.56-2.068 0-3.93-.717-3.936-.683l-.591 3.915c.107.034 1.255.551 4.973.551 0 0-3.718 0 0 0zm0 0M141.004 40.133l-.956 5.996s-1.668-2.33-4.28-2.33c-4.06 0-7.445 4.95-7.445 10.636 0 3.67 1.805 7.267 5.496 7.267 2.655 0 4.126-1.87 4.126-1.87l-.195 1.597h4.311l3.386-21.303-4.443.007zm-2.058 11.69c0 2.367-1.159 5.528-3.562 5.528-1.595 0-2.342-1.354-2.342-3.478 0-3.473 1.543-5.764 3.49-5.764 1.596 0 2.414 1.107 2.414 3.715 0 0 0-2.608 0 0zm0 0M18.675 61.448l2.698-16.084.396 16.084h3.054l5.696-16.084-2.523 16.084h4.537l3.495-21.332H29.01l-4.37 13.088-.227-13.088h-6.467l-3.545 21.332h4.273zm0 0M86.961 61.477c1.29-7.415 1.53-13.436 4.608-12.334.54-2.87 1.06-3.98 1.647-5.195 0 0-.275-.059-.854-.059-1.985 0-3.456 2.741-3.456 2.741l.396-2.517h-4.127L82.41 61.477h4.551zm0 0M114.519 43.682c-3.04 0-5.37.988-5.37.988l-.642 3.859s1.923-.79 4.83-.79c1.65 0 2.856.188 2.856 1.543 0 .824-.147 1.128-.147 1.128s-1.301-.11-1.905-.11c-3.832 0-7.859 1.653-7.859 6.638 0 3.928 2.641 4.83 4.278 4.83 3.127 0 4.475-2.051 4.547-2.058l-.145 1.712h3.902l1.74-12.337c.001-5.234-4.516-5.403-6.085-5.403zm.95 10.046c.085.753-.467 4.286-3.137 4.286-1.376 0-1.733-1.063-1.733-1.692 0-1.226.659-2.698 3.906-2.698.755.001.836.083.964.104 0 0-.128-.021 0 0zm0 0M124.172 61.477c1.29-7.415 1.53-13.436 4.607-12.334.54-2.87 1.06-3.98 1.648-5.195 0 0-.276-.059-.854-.059-1.985 0-3.456 2.741-3.456 2.741l.395-2.517h-4.126l-2.765 17.364h4.55zm0 0"
+                  fill="#FFF"
+                />
+              </g>
+            </svg>
+            <svg
+              height="50"
+              viewBox="0 0 160 100"
+              width="80"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g fill="none" fill-rule="evenodd">
+                <path
+                  d="M148 0H8C4 0 0 4 0 8v80c0 8 4 12 12 12h136c8 0 12-4 12-12V12c0-8-4-12-12-12zm0 0"
+                  fill="#F6F6F6"
+                />
+                <path
+                  d="M151.765 33.457h-4.209c-.962 0-1.938.717-2.21 1.63-.011.036-.03.072-.039.11l-.274 1.214-5.77 25.463c-.133.576-.222.951-.249 1.049l.011.014c-.2.89.35 1.626 1.252 1.708l.012.017h4.36c.955 0 1.925-.71 2.206-1.61.013-.045.034-.085.045-.13l6.293-27.726-.01-.004c.215-.948-.413-1.735-1.418-1.735zM130.22 58.483c-.583.357-1.198.663-1.843.923-.867.34-1.689.52-2.45.52-1.166 0-2.063-.161-2.669-.505-.607-.326-.925-.892-.915-1.703 0-.936.222-1.663.681-2.232.463-.548 1.15-.99 2.003-1.318.848-.28 1.89-.51 3.095-.676 1.07-.131 3.186-.369 3.457-.37.27-.003.45-.148.33.555-.054.305-.665 2.747-.945 3.858-.081.333-.536.818-.744.948 0 0 .208-.13 0 0zm8.306-17.167c-1.783-.969-4.57-1.458-8.386-1.458-1.887 0-3.783.147-5.685.435-1.397.208-1.54.242-2.408.426-1.785.378-2.06 2.118-2.06 2.118l-.573 2.295c-.325 1.468.533 1.408.916 1.294.78-.23 1.202-.457 2.792-.807 1.52-.336 3.125-.587 4.406-.577 1.879 0 3.308.2 4.257.586.95.404 1.421 1.09 1.421 2.074.003.233.01.454-.077.647-.078.18-.228.353-.678.413-2.681.155-4.606.393-6.923.722-2.287.314-4.288.85-5.961 1.595-1.783.77-3.117 1.8-4.037 3.106-.895 1.312-1.345 2.901-1.348 4.773 0 1.768.653 3.21 1.916 4.33 1.278 1.106 2.94 1.653 4.952 1.653 1.257-.009 2.24-.097 2.945-.268a15.092 15.092 0 0 0 2.263-.754c.6-.245 1.249-.598 1.933-1.042.685-.445 1.16-.76 1.768-1.149l.022.037-.17.736c-.002.007-.012.01-.012.017l.006.014c-.196.886.35 1.623 1.252 1.71l.011.016h.08l.003.003c.599 0 2.653 0 3.613-.003h.67c.044 0 .049-.013.066-.023.92-.11 1.803-.84 2.01-1.717l3.429-14.407c.079-.339.141-.73.178-1.18.043-.455.094-.83.079-1.1.007-2.04-.892-3.546-2.67-4.515zm-20.645-3.282c-.585-1.108-1.468-2-2.585-2.695-1.145-.694-2.506-1.177-4.082-1.46-1.558-.265-3.41-.417-5.522-.422l-9.821.005c-1.012.017-2.004.79-2.237 1.742L87.03 63.182c-.24.95.416 1.743 1.41 1.738l4.712-.009c1 .009 2.018-.778 2.254-1.73l1.593-6.789c.223-.951 1.24-1.748 2.255-1.734h1.34c5.748 0 10.205-1.15 13.396-3.44 3.184-2.3 4.787-5.317 4.787-9.07-.01-1.638-.297-3.019-.896-4.114zm-10.132 9.15c-1.407.997-3.381 1.496-5.922 1.496h-1.168c-1.01.012-1.663-.784-1.423-1.737l1.408-5.939c.21-.939 1.236-1.738 2.232-1.73l1.543-.008c1.801.008 3.149.301 4.08.885.915.59 1.358 1.505 1.365 2.725.004 1.86-.702 3.29-2.115 4.309"
+                  fill="#306FC5"
+                />
+                <path
+                  d="M84.836 39.858c-.895 0-2.068.709-2.623 1.565 0 0-5.982 10.046-6.57 11.05-.32.54-.643.197-.697-.004-.043-.244-1.854-10.98-1.854-10.98-.203-.864-1.125-1.606-2.278-1.602l-3.73.005c-.9 0-1.46.706-1.26 1.558 0 0 2.851 15.831 3.407 19.555.278 2.059-.028 2.424-.028 2.424l-3.697 6.314c-.541.856-.245 1.557.65 1.557l4.323-.003c.895 0 2.08-.698 2.613-1.556l16.63-27.55s1.59-2.353.124-2.333c-1 .013-5.01 0-5.01 0zM53.614 58.483c-.583.357-1.197.661-1.842.923-.867.339-1.693.518-2.45.518-1.164 0-2.063-.161-2.67-.503-.607-.327-.926-.893-.916-1.705 0-.934.224-1.662.683-2.23.463-.55 1.148-.992 2-1.32.85-.281 1.896-.509 3.096-.674 1.07-.131 3.19-.368 3.46-.372.268 0 .448-.147.328.555-.053.305-.664 2.75-.945 3.86-.084.333-.539.818-.744.948 0 0 .205-.13 0 0zm8.306-17.168c-1.782-.969-4.57-1.457-8.385-1.457a37.93 37.93 0 0 0-5.686.434c-1.399.207-1.54.242-2.408.426-1.785.38-2.06 2.118-2.06 2.118l-.573 2.296c-.324 1.468.535 1.407.917 1.293.777-.229 1.202-.456 2.792-.808 1.517-.334 3.125-.585 4.404-.576 1.88 0 3.308.2 4.258.585.95.404 1.419 1.093 1.419 2.075.006.234.011.455-.073.646-.08.182-.232.355-.68.413-2.68.158-4.603.395-6.925.724-2.287.314-4.287.85-5.96 1.594-1.784.77-3.116 1.802-4.034 3.107-.899 1.312-1.348 2.9-1.35 4.773 0 1.767.654 3.21 1.916 4.33 1.279 1.105 2.94 1.653 4.95 1.653 1.258-.009 2.241-.098 2.948-.268a15.148 15.148 0 0 0 2.26-.754c.603-.245 1.25-.6 1.935-1.043.683-.444 1.16-.76 1.77-1.148l.02.036-.171.735c-.002.007-.011.012-.011.02l.007.012c-.196.888.35 1.624 1.252 1.71l.01.017h.08l.002.005 3.612-.005h.671c.045 0 .052-.015.066-.024.923-.113 1.802-.842 2.012-1.715l3.428-14.408c.078-.339.14-.73.176-1.18.045-.457.095-.83.082-1.1.007-2.04-.894-3.547-2.67-4.516zm-21.444-3.281c-.585-1.108-1.469-2-2.586-2.695-1.145-.694-2.506-1.177-4.082-1.46-1.558-.265-3.41-.417-5.522-.422l-9.821.005c-1.011.017-2.004.79-2.237 1.742L9.624 63.182c-.24.95.416 1.743 1.41 1.738l4.712-.009c1 .009 2.018-.778 2.254-1.73l1.593-6.789c.223-.951 1.24-1.748 2.255-1.734h1.34c5.748 0 10.205-1.15 13.397-3.44 3.183-2.3 4.786-5.317 4.786-9.07-.01-1.638-.297-3.019-.895-4.114zm-10.133 9.15c-1.407.997-3.381 1.496-5.921 1.496h-1.169c-1.01.012-1.663-.784-1.423-1.737l1.408-5.939c.21-.939 1.236-1.738 2.232-1.73l1.543-.008c1.802.008 3.15.301 4.08.885.915.59 1.358 1.505 1.365 2.725.004 1.86-.702 3.29-2.115 4.309"
+                  fill="#265697"
+                />
+              </g>
+            </svg>
+          </div>
+          &copy; Copyright Creative Train Company 2018. All Rights Reserved.{" "}
+          <a href="/sitemap.xml">Sitemap</a>
+        </div>
+      </div>
+    </footer>
+    {/* <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "url": "https://www.creativetrains.ca",
+    "name": "Creative Train Company",
+    "logo": "https://www.creativetrains.ca/images/original/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-204-332-0492",
+      "email": "henry@creativetrains.ca",
+      "contactType": "Sales"
+    }
+  }
+</script> */}
+
+    {/* </>
+  <footer className="footer has-background-black has-text-white-ter">
+    <div className="content has-text-centered has-background-black has-text-white-ter">
+      <div className="container has-background-black has-text-white-ter">
+        <div className="columns">
+          <div className="column is-4">
+            <section className="menu">
+              <ul className="menu-list">
+                <li>
+                  <Link to="/" className="navbar-item">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link className="navbar-item" to="/about">
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link className="navbar-item" to="/products">
+                    Products
+                  </Link>
+                </li>
+                <li>
+                  <Link className="navbar-item" to="/contact/examples">
+                    Form Examples
+                  </Link>
+                </li>
+                <li>
+                  <a
+                    className="navbar-item"
+                    href="/admin/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Admin
+                  </a>
+                </li>
+              </ul>
+            </section>
+          </div>
+          <div className="column is-4">
+            <section>
+              <ul className="menu-list">
+                <li>
+                  <Link className="navbar-item" to="/blog">
+                    Latest Stories
+                  </Link>
+                </li>
+                <li>
+                  <Link className="navbar-item" to="/contact">
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </section>
+          </div>
+          <div className="column is-4 social">
+            <a title="facebook" href="https://facebook.com">
+              <img
+                src={facebook}
+                alt="Facebook"
+                style={{ width: "1em", height: "1em" }}
+              />
+            </a>
+            <a title="twitter" href="https://twitter.com">
+              <img
+                className="fas fa-lg"
+                src={twitter}
+                alt="Twitter"
+                style={{ width: "1em", height: "1em" }}
+              />
+            </a>
+            <a title="instagram" href="https://instagram.com">
+              <img
+                src={instagram}
+                alt="Instagram"
+                style={{ width: "1em", height: "1em" }}
+              />
+            </a>
+            <a title="vimeo" href="https://vimeo.com">
+              <img
+                src={vimeo}
+                alt="Vimeo"
+                style={{ width: "1em", height: "1em" }}
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer> */}
+  </>
+)

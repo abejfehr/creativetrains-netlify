@@ -2,13 +2,16 @@ var proxy = require("http-proxy-middleware")
 
 module.exports = {
   siteMetadata: {
-    title: "Gatsby + Netlify CMS Starter",
+    title: "Creative Train Company",
     description:
-      "This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution."
+      'Creative Train Company manufactures and sells 1.5"/1.6" scale trains.',
+    phone: "12043320492",
+    email: "henry@creativetrains.ca",
+    siteUrl: "https://www.creativetrains.ca"
   },
   plugins: [
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sass",
+    `gatsby-plugin-sitemap`,
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: "gatsby-source-filesystem",

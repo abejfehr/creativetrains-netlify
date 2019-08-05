@@ -1,8 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import Layout from "../components/Layout"
+import { ContactForm } from "../components/ContactForm"
 
 export const IndexPageTemplate = ({
   image,
@@ -13,7 +14,77 @@ export const IndexPageTemplate = ({
   description
 }) => (
   <div>
-    <div
+    <section>
+      <div style={{ flex: 2 }}>
+        <p>
+          Creative Train Company manufactures and sells quality 1.5&quot; and
+          1.6&quot; scale train cars.
+        </p>
+
+        <p>
+          Whether you're a hobbyist who's looking for a head-start or a train
+          complete with paint and decals, Creative Train Company is the right
+          place.
+        </p>
+
+        <p>
+          Creative Train Company is accepting new orders! Contact us by phone or
+          email to discuss your scale trains and see how we can work together to
+          fit your needs.
+        </p>
+
+        <p>
+          Phone: <a href="tel:+12043320492">+1 (204) 332-0492</a>
+        </p>
+        <p>
+          Email:
+          <a href="mailto:henry@creativetrains.ca">henry@creativetrains.ca</a>
+        </p>
+      </div>
+
+      <div style={{ flex: 1 }}>
+        <h3>Interested in trains?</h3>
+        <p>Let us know and we'll talk.</p>
+        <ContactForm />
+      </div>
+    </section>
+
+    <section>
+      <div style={{ flex: 2 }}>
+        <h2>Gallery</h2>
+        <p>
+          See some of the train cars and accessories that have been built by
+          Creative Train Company in the past. Not looking for anything custom?{" "}
+          <Link to="/contact">Contact us</Link> for details.
+        </p>
+        <ul class="new gallery">
+          {/* {% for post in site.posts %}
+          <li>
+            <a href="{{ post.url }}">
+              <figure>
+                <img src="{{ post.headline_image_url }}" />
+                <figcaption>{{ post.title }}</figcaption>
+              </figure>
+            </a>
+          </li>
+          {% endfor %} */}
+        </ul>
+      </div>
+      <div style={{ flex: 1 }}>
+        <h3>Client Testimonial</h3>
+        <blockquote>
+          <p>
+            ...what a great job you did on the Shorty Tank Car. We love the
+            detail, and the quality of the car. The new tanker will now be
+            servicing towns along the Great Western Island Railroad. Looking
+            forward to buying more rolling stock from Creative Train Company.
+          </p>
+        </blockquote>
+        <cite>– Wayne and Barbara, Great Western Island Railroad</cite>
+      </div>
+    </section>
+
+    {/* <div
       className="full-width-image margin-top-0"
       style={{
         backgroundImage: `url(${
@@ -93,7 +164,7 @@ export const IndexPageTemplate = ({
           </div>
         </div>
       </div>
-    </section>
+    </section> */}
   </div>
 )
 
@@ -113,7 +184,7 @@ const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
-    <Layout>
+    <Layout heading={frontmatter.heading} subheading={frontmatter.subheading}>
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
@@ -151,15 +222,6 @@ export const pageQuery = graphql`
         }
         heading
         subheading
-        mainpitch {
-          title
-          description
-        }
-        description
-        intro {
-          heading
-          description
-        }
       }
     }
   }
