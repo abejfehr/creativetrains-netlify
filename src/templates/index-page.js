@@ -4,6 +4,7 @@ import { graphql, Link } from "gatsby"
 
 import Layout from "../components/Layout"
 import { ContactForm } from "../components/ContactForm"
+import { Gallery } from "../components/Gallery"
 
 export const IndexPageTemplate = ({
   image,
@@ -58,6 +59,7 @@ export const IndexPageTemplate = ({
           <Link to="/contact">Contact us</Link> for details.
         </p>
         <ul class="new gallery">
+          <Gallery />
           {/* {% for post in site.posts %}
           <li>
             <a href="{{ post.url }}">
