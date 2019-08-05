@@ -30,10 +30,12 @@ exports.createPages = ({ actions, graphql }) => {
 
     const posts = result.data.allMarkdownRemark.edges
 
-    console.log(JSON.stringify(posts, null, 2))
-
     posts.forEach(edge => {
       const id = edge.node.id
+      if (!edge.node.frontmatter.templateKey) {
+        console.log("Skipped page creation")
+        return
+      }
       createPage({
         path: edge.node.fields.slug,
         component: path.resolve(

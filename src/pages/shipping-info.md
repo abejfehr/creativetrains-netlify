@@ -1,7 +1,6 @@
 ---
 templateKey: shipping-info-page
 title: Creative Train Company | Shipping Info
-image: /img/home-jumbotron.jpg
 heading: Shipping Info
 body:
   - All Creative Train Company cars are shipped by freight, and we're proud to announce that we're able to ship our train cars anywhere within Canada and the continental United States.

@@ -36,8 +36,8 @@ collections:
   - create: true
     fields:
       - default: gallery-image
-        label: "Template Key"
-        name: templateKey
+        label: "Type"
+        name: type
         widget: hidden
       - label: Title
         name: title
@@ -51,4 +51,23 @@ collections:
     folder: src/pages/gallery
     label: "Gallery Image"
     name: gallery
+    slug: "{{slug}}"
+  - create: true
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Description
+        name: description
+        widget: text
+      - label: "Gallery Images"
+        name: "gallery"
+        widget: "list"
+        fields:
+          - label: Image
+            name: image
+            widget: image
+    folder: src/pages/rolling-stock
+    label: "Train Car"
+    name: train-cars
     slug: "{{slug}}"

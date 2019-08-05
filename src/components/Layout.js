@@ -153,7 +153,7 @@ const TemplateWrapper = ({ children, heading, subheading }) => {
         <meta property="og:image" content="/img/og-image.jpg" /> */}
       </Helmet>
       <Navbar heading={heading} subheading={subheading} />
-      <div class="container" style={{ flex: 1 }}>
+      <div className="container" style={{ flex: 1 }}>
         {children}
       </div>
       <Footer />

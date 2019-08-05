@@ -1,29 +1,42 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
+
 export const Gallery = () => (
   <StaticQuery
     query={graphql`
       query GalleryImageQuery {
         allMarkdownRemark(
           # sort: { order: DESC, fields: [frontmatter___date] }
-          filter: { frontmatter: { templateKey: { eq: "gallery-image" } } }
+          filter: { frontmatter: { type: { eq: "gallery-image" } } }
         ) {
           edges {
             node {
-              excerpt(pruneLength: 400)
               id
               fields {
                 slug
               }
               frontmatter {
                 title
-                templateKey
+                image {
+                  childImageSharp {
+                    fluid(maxWidth: 2048, quality: 100) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
               }
             }
           }
         }
       }
     `}
-    render={data => <div></div>}
+    render={data => (
+      <div>
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <Img fluid={node.frontmatter.image.childImageSharp.fluid} />
+        ))}
+      </div>
+    )}
   />
 )

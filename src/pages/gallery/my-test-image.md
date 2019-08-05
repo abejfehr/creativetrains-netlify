@@ -1,7 +1,6 @@
 ---
-templateKey: gallery-image
-title: My Test Image
-description: My Test Description
+type: gallery-image
+title: YVR Car Door
+description: Description
 image: /img/yvr-car-door.jpg
 ---
-

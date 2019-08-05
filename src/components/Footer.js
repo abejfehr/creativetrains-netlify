@@ -62,16 +62,16 @@ export const Footer = () => (
     `}
     </style>
     <footer>
-      <div class="container">
-        <div class="columns" style={{ display: "flex", flex: 1 }}>
-          <div class="column">
-            <div class="section-header">Website Links</div>
+      <div className="container">
+        <div className="columns" style={{ display: "flex", flex: 1 }}>
+          <div className="column">
+            <div className="section-header">Website Links</div>
             <Link to="/">Home</Link>
             <Link to="/shipping-info">Shipping Info</Link>
             <Link to="/contact">Contact</Link>
           </div>
-          <div class="column">
-            <div class="section-header">Rolling Stock</div>
+          <div className="column">
+            <div className="section-header">Rolling Stock</div>
             <a href="/rolling-stock#tankers">Tank Cars</a>
             <a href="/rolling-stock#flat-cars">Flat Cars</a>
             <a href="/rolling-stock#boxcars">Boxcars</a>
@@ -81,7 +81,7 @@ export const Footer = () => (
         <a href="/accessories#lights">Lights</a>
         <a href="/accessories#trucks">Trucks</a>
       </div> --> */}
-          <div class="column">
+          <div className="column">
             <div style={{ fontWeight: "bold" }}>Creative Train Company</div>
             <div>Box 856</div>
             <div>Minnedosa, MB</div>
@@ -107,8 +107,8 @@ export const Footer = () => (
           </div>
         </div>
 
-        <div class="copyright">
-          <div class="payment-icons">
+        <div className="copyright">
+          <div className="payment-icons">
             <div style={{ marginBottom: "10px" }}>
               We accept Visa, MasterCard, and PayPal
             </div>
@@ -191,20 +191,20 @@ export const Footer = () => (
       </div>
     </footer>
     {/* <script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "Organization",
-    "url": "https://www.creativetrains.ca",
-    "name": "Creative Train Company",
-    "logo": "https://www.creativetrains.ca/images/original/logo.png",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+1-204-332-0492",
-      "email": "henry@creativetrains.ca",
-      "contactType": "Sales"
-    }
-  }
-</script> */}
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "https://www.creativetrains.ca",
+        "name": "Creative Train Company",
+        "logo": "https://www.creativetrains.ca/images/original/logo.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-204-332-0492",
+          "email": "henry@creativetrains.ca",
+          "contactType": "Sales"
+        }
+      }
+    </script> */}
 
     {/* </>
   <footer className="footer has-background-black has-text-white-ter">

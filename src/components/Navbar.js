@@ -23,13 +23,13 @@ export const Navbar = ({ heading, subheading }) => (
 
     <div>
       <div
-        class="container"
+        className="container"
         style={{ display: "flex", justifyContent: "center" }}
       >
         <img
           src={logo}
           alt="Creative Train Company"
-          class="logo"
+          className="logo"
           style={{ marginRight: "20px" }}
         />
         <div
@@ -40,7 +40,7 @@ export const Navbar = ({ heading, subheading }) => (
           }}
         >
           <h1 style={{ textAlign: "center", marginTop: 0 }}>{heading}</h1>
-          <p class="tagline">{subheading}</p>
+          <p className="tagline">{subheading}</p>
           <p style={{ textAlign: "right" }}>
             Check us out on{" "}
             <a href="https://www.facebook.com/creativetraincompany/">
@@ -51,7 +51,7 @@ export const Navbar = ({ heading, subheading }) => (
       </div>
 
       <nav>
-        <div class="container">
+        <div className="container">
           <Link to="/">Home</Link>
           <Link to="/rolling-stock">Rolling Stock</Link>
           <Link to="/contact">Contact</Link>

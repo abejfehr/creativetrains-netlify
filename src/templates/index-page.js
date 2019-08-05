@@ -58,7 +58,7 @@ export const IndexPageTemplate = ({
           Creative Train Company in the past. Not looking for anything custom?{" "}
           <Link to="/contact">Contact us</Link> for details.
         </p>
-        <ul class="new gallery">
+        <ul className="new gallery">
           <Gallery />
           {/* {% for post in site.posts %}
           <li>
