@@ -1,30 +1,54 @@
+---
 backend:
-  name: git-gateway
   branch: master
+  name: git-gateway
 
 media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "pages"
-    label: "Pages"
-    files:
-      - name: "index"
+  - files:
+      - fields:
+          - default: index-page
+            label: "Template Key"
+            name: templateKey
+            widget: hidden
+          - label: Title
+            name: title
+            widget: string
+          - label: Image
+            name: image
+            widget: image
+          - label: Heading
+            name: heading
+            widget: string
+          - label: Subheading
+            name: subheading
+            widget: string
+          - label: Description
+            name: description
+            widget: string
+        file: src/pages/index.md
         label: "Home Page"
-        file: "src/pages/index.md"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: Image, name: image, widget: image}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Subheading, name: subheading, widget: string}
-          - {label: Description, name: description, widget: string}
-  - name: "gallery"
-    label: "Gallery Image"
-    folder: "src/pages/gallery"
-    create: true
-    slug: "{{slug}}"
+        name: index
+    label: Pages
+    name: pages
+  - create: true
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "gallery-image"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "text"}
+      - default: gallery-image
+        label: "Template Key"
+        name: templateKey
+        widget: hidden
+      - label: Title
+        name: title
+        widget: string
+      - label: Description
+        name: description
+        widget: text
+      - label: Image
+        name: image
+        widget: image
+    folder: src/pages/gallery
+    label: "Gallery Image"
+    name: gallery
+    slug: "{{slug}}"
